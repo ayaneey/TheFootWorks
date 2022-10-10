@@ -2,9 +2,9 @@ const { Model, DataTypes } = require("sequelize");
 
 const sequelize = require("../config/connection.js");
 
-class User extends Model {}
+class WishList extends Model {}
 
-User.init(
+WishList.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -13,18 +13,22 @@ User.init(
       autoIncrement: true,
     },
 
-    email: {
-      type: DataTypes.STRING,
+    user_id: {
+      type: DataTypes.INTEGER,
       allowNull: false,
-      unique: true,
-      validate: {
-        isEmail: true,
+      references: {
+        model: "user",
+        key: "id",
       },
     },
 
-    password: {
-      type: DataTypes.STRING,
+    product_id: {
+      type: DataTypes.INTEGER,
       allowNull: false,
+      references: {
+        model: "product",
+        key: "id",
+      },
     },
   },
 
@@ -33,8 +37,8 @@ User.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: "user",
+    modelName: "wish_list",
   }
 );
 
-module.exports = User;
+module.exports = WishList;

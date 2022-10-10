@@ -33,11 +33,6 @@ Product.init(
       allowNull: false,
     },
 
-    brand: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-
     gender: {
       type: DataTypes.STRING,
       allowNull: false,

@@ -2,6 +2,12 @@
 const express = require('express');
 const path = require('path');
 const app = express();
+const session = require("express-session");
+const exphbs = require("express-handlebars");
+const routes = require("./controllers");
+const auth = require("./utils/auth");
+const sequelize = require("./config/connection");
+const SequelizeStore = require("connect-session-sequelize")(session.Store);
 
 const port = 3001;
 
@@ -11,3 +17,7 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
+// sync sequelize models to the database, then turn on the server
+app.listen(PORT, () => {
+  console.log(`App listening on port ${PORT}!`);
+});

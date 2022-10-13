@@ -11,11 +11,16 @@ const SequelizeStore = require("connect-session-sequelize")(session.Store);
 
 const PORT = 3007;
 
+const hbs = exphbs.create({});
+
 // Setting up Express App to handle data parsing
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.use(express.static(path.join(__dirname, "public")));
+
+app.engine("handlebars", hbs.engine);
+app.set("view engine", "handlebars");
 
 app.use(routes);
 

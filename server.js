@@ -19,17 +19,6 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use(routes);
 
-const sess = {
-  secret: "Super secret secret",
-  cookie: {},
-  resave: false,
-  saveUninitialized: true,
-  store: new SequelizeStore({
-    db: sequelize,
-  }),
-};
-
-app.use(session(sess));
 
 // sync sequelize models to the database, then turn on the server
 // app.listen(PORT, () => {

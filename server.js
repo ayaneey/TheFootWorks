@@ -9,7 +9,7 @@ const routes = require("./controllers");
 const sequelize = require("./config/connection");
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
 
-const PORT = 3001;
+const PORT = 3007;
 
 // Setting up Express App to handle data parsing
 app.use(express.urlencoded({ extended: true }));
@@ -19,7 +19,6 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use(routes);
 
-
 // sync sequelize models to the database, then turn on the server
 // app.listen(PORT, () => {
 //   console.log(`App listening on port ${PORT}!`);
@@ -27,4 +26,3 @@ app.use(routes);
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log("Now listening"));
 });
-

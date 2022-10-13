@@ -1,5 +1,6 @@
 const sequelize = require("../config/connection");
 const Product = require("../models/product");
+const WishList = require("../models/wishlist");
 const shoeData = require("./shoe-seeds.json");
 
 const seedDatabase = async () => {

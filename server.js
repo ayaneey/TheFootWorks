@@ -19,7 +19,7 @@ app.use(express.json());
 
 app.use(express.static(path.join(__dirname, "public")));
 
-app.engine("handlebars", hbs.engine);
+app.engine("handlebars", hbs.engine); // we can add a default layout app.engine("handlebars", expbs({ defaultLayout: "main")
 app.set("view engine", "handlebars");
 
 app.use(routes);

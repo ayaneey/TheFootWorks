@@ -13,8 +13,10 @@ router.get("/", async (req, res) => {
     // const users = userData.map((project) => project.get({ plain: true }));
 
     // Serialize data so the template can read it
-    const projects = projectData.map((project) => project.get({ plain: true }));
 
+    // const shoes = productData.map((shoes) => shoes.get({ plain: true }));
+
+    console.log(shoes);
     res.render("homepage", {
       shoes,
       logged_in: req.session.logged_in,

@@ -48,14 +48,31 @@
               <a class="nav-link" href="http://localhost:5501/user">Logout</a>
             </li>
           </ul>
-          <form role="search">
+          <div id="container">
+        <div id="search">
+            <label for="searchInput">Find <i class="fa fa-search"></i>Friends</label>
+            <input id="searchInput" type="text" placeholder="Search">
+            <button id="search">Search</button>
+        </div>
+          {{!-- <form role="search">
             <input
               class="form-control"
               type="search"
               placeholder="Search"
               aria-label="Search"
             />
-          </form>
+          </form> --}}
+          <ul id="results">
+            <li class="name">Nike</li>
+            <li class="name">Adidas</li>
+            <li class="name">Air Force</li>
+            <li class="name">Puma</li>
+            <li class="name">Yeezy</li>
+        
+              
+        </ul>
+        
+    </div>
         </div>
       </div>
     </nav>
@@ -89,7 +106,7 @@
                 category
               "
             >
-              Male
+              Brands
               <span
                 style="background-color: #d3d3d3"
                 class="badge badge-primary badge-pill"
@@ -105,7 +122,7 @@
                 category
               "
             >
-              Female<span
+              Sales<span
                 style="background-color: #d3d3d3"
                 class="badge badge-primary badge-pill"
                 >category</span
@@ -125,7 +142,7 @@
       </div>
     </div>
     <main class="container container-fluid mt-5">
-      <!-- Render the sub layout -->a
+      <!-- Render the sub layout -->
       {{{ body }}}
     </main>
     <script
@@ -134,7 +151,7 @@
       crossorigin="anonymous"
     ></script>
     <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
-    <script src="../public/js/search.js"></script>
+    <script src="/js/search.js"></script>
     
   </body>
 </html>

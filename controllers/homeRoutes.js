@@ -1,18 +1,21 @@
 const router = require("express").Router();
 const path = require("path");
-const { User } = require("../models");
+const { User, Product } = require("../models");
 const withAuth = require("../utils/auth");
 
 router.get("/", async (req, res) => {
   try {
-    // const userData = await User.findAll({
-    //   attributes: { exclude: ["password"] },
-    //   order: [["name", "ASC"]],
-    // });
+    const productData = await Product.findAll();
 
-    // const users = userData.map((project) => project.get({ plain: true }));
+    //const users = userData.map((project) => project.get({ plain: true }));
 
-    res.render("hompage");
+    // Serialize data so the template can read it
+    const shoes = productData.map((shoes) => shoes.get({ plain: true }));
+
+    console.log(productData);
+    res.render("homepage", {
+      shoes,
+    });
   } catch (err) {
     res.status(500).json(err);
   }

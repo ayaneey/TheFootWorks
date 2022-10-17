@@ -4,48 +4,62 @@
     "brand": "Nike",
     "colour": "Black",
     "sizes_available": "6/7/8/9/10/11/12",
-    "gender": "Uni-sex"
+    "gender": "Uni-sex",
+    "image": "AirMax97Black.png",
+    "price": "164.95£"
   },
   {
     "name": "Nike 96",
     "brand": "Nike",
     "colour": "Brown",
     "sizes_available": "6/7/8/9/10/11/12",
-    "gender": "Uni-sex"
+    "gender": "Uni-sex",
+    "image": "Nike96brown.png",
+    "price": "160.00£"
   },
   {
     "name": "Nike Air Force 1",
     "brand": "Nike",
     "colour": "White",
     "sizes_available": "6/8/9/10/12",
-    "gender": "Uni-sex"
+    "gender": "Uni-sex",
+    "image": "AirForce1White.png",
+    "price": "109.95£"
   },
   {
     "name": "Yeezy 700",
     "brand": "Yeezy",
     "colour": "Black",
     "sizes_available": "6/7/8/9/10/11",
-    "gender": "Uni-sex"
+    "gender": "Uni-sex",
+    "image": "AdidasYeezy700black.png",
+    "price": "315.00£"
   },
   {
     "name": "Adidas Ozweego",
     "brand": "Adidas",
     "colour": "Off white",
     "sizes_available": "8/9/10/11/14",
-    "gender": "Uni-sex"
+    "gender": "Uni-sex",
+    "image": "AdidasOzweegooff-white.png",
+    "price": "72.00£"
   },
   {
     "name": "Yeezy 450",
     "brand": "Yeezy",
     "colour": "Carbon",
     "sizes_available": "6/9/10/12",
-    "gender": "Uni-sex"
+    "gender": "Uni-sex",
+    "image": "Yeezy450carbon.png",
+    "price": "222.00£"
   },
   {
     "name": "Puma Seudes",
     "brand": "Puma",
     "colour": "Red",
     "sizes_available": "6/8/10/11/12",
-    "gender": "Uni-sex"
+    "gender": "Uni-sex",
+    "image": "PumaSuedeRed.png",
+    "price": "34.99£"
   }
 ]

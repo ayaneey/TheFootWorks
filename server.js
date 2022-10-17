@@ -9,7 +9,7 @@ const routes = require("./controllers");
 const sequelize = require("./config/connection");
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
 
-const PORT = process.env.PORT || 3001; //add heroku
+const PORT = process.env.PORT || 5501; //add heroku
 
 // Session setup
 const sess = {

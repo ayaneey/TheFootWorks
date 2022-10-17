@@ -11,7 +11,18 @@ const SequelizeStore = require("connect-session-sequelize")(session.Store);
 
 const PORT = 5501;
 
-const hbs = exphbs.create({});
+// Session setup
+const sess = {
+  secret: "Super secret secret",
+  cookie: {},
+  resave: false,
+  saveUninitialized: true,
+  store: new SequelizeStore({
+    db: sequelize,
+  }),
+};
+
+app.use(session(sess));
 
 // Setting up Express App to handle data parsing
 app.use(express.urlencoded({ extended: true }));
@@ -19,6 +30,8 @@ app.use(express.json());
 
 app.use(express.static(path.join(__dirname, "public")));
 
+// Handlebars
+const hbs = exphbs.create({});
 app.engine("handlebars", hbs.engine); // we can add a default layout app.engine("handlebars", expbs({ defaultLayout: "main")
 app.set("view engine", "handlebars");
 

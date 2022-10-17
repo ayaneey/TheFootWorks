@@ -48,6 +48,9 @@ img {
 .checkbox {
   padding: 6px 10px;
 }
+.card-img-top {
+  max-width: 200px;
+}
 .border {
   border-radius: 12px;
 }
@@ -237,7 +240,8 @@ img {
 .btn.btn-success {
   visibility: hidden;
 }
-@media (min-width: 992px) {
+
+@media (min-width: 1149px) {
   .filter,
   #mobile-filter {
     display: none;

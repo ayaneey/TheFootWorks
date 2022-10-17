@@ -2,7 +2,7 @@ const router = require("express").Router();
 const { User } = require("../../models");
 
 // Get request render login page
-router.get("/", async (req, res) => {
+router.get("/login", async (req, res) => {
   try {
     res.render("login");
   } catch (err) {

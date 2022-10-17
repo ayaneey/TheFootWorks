@@ -1,6 +1,23 @@
 const router = require("express").Router();
 const { User } = require("../../models");
 
+// Get request render login page
+router.get("/", async (req, res) => {
+  try {
+    res.render("login");
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+// render signup
+router.get("/signup", async (req, res) => {
+  try {
+    res.render("signup");
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 // // CREATE new user
 router.post("/", async (req, res) => {
   try {
@@ -39,9 +56,9 @@ router.post("/login", async (req, res) => {
     const validPassword = await dbUserData.checkPassword(req.body.password, 10);
 
     if (!validPassword) {
-      res.status(400).json({
-        message: "Incorrect email or password. Please try again!",
-      });
+      res
+        .status(400)
+        .json({ message: "Incorrect email or password. Please try again!" });
       return;
     }
 

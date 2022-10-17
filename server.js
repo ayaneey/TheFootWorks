@@ -9,7 +9,7 @@ const routes = require("./controllers");
 const sequelize = require("./config/connection");
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
 
-const PORT = 3007;
+const PORT = 5501;
 
 // Session setup
 const sess = {

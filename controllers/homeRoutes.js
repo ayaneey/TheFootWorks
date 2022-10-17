@@ -18,13 +18,28 @@ router.get("/", async (req, res) => {
   }
 });
 
-// router.get("/login", (req, res) => {
-//   if (req.session.logged_in) {
-//     res.redirect("/");
-//     return;
-//   }
-
-//   res.render("login");
-// });
+router.get("/:id", async (req, res) => {
+  try {
+    const shoesData = await Product.findAll({
+      where: {
+        name: {
+          [Op.like]: "%Nike",
+        },
+      },
+    });
+    if (!shoesData) {
+      res.status(404).json({ message: "No shoes with this id!" });
+      return;
+    }
+    //console.log(shoesData);
+    const shoes = shoesData.map((shoes) => shoes.get({ plain: true }));
+    console.log(shoes);
+    res.render("homepage", {
+      shoes,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
 module.exports = router;

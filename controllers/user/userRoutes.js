@@ -36,12 +36,12 @@ router.post("/login", async (req, res) => {
       return;
     }
 
-    const validPassword = await dbUserData.checkPassword(req.body.password);
+    const validPassword = await dbUserData.checkPassword(req.body.password, 10);
 
     if (!validPassword) {
-      res
-        .status(400)
-        .json({ message: "Incorrect email or password. Please try again!" });
+      res.status(400).json({
+        message: "Incorrect email or password. Please try again!",
+      });
       return;
     }
 
@@ -66,7 +66,7 @@ router.post("/login", async (req, res) => {
 router.post("/logout", (req, res) => {
   if (req.session.loggedIn) {
     req.session.destroy(() => {
-      res.status(204).end();
+      res.status(204).json({ message: "You are logged out!" }).end();
     });
   } else {
     res.status(404).end();

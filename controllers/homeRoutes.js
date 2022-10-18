@@ -2,6 +2,7 @@ const router = require("express").Router();
 const path = require("path");
 const { User, Product } = require("../models");
 const withAuth = require("../utils/auth");
+const { Op } = require("sequelize");
 
 router.get("/", async (req, res) => {
   try {
@@ -21,12 +22,13 @@ router.get("/", async (req, res) => {
   }
 });
 
-router.get("/:id", async (req, res) => {
+router.get("/:name", async (req, res) => {
   try {
+    console.log(req.params.name);
     const shoesData = await Product.findAll({
       where: {
         name: {
-          [Op.like]: "%Nike",
+          [Op.substring]: req.params.name,
         },
       },
     });

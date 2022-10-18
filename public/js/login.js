@@ -24,4 +24,14 @@ const loginForm = async (event) => {
   }
 };
 
-document.querySelector(".loginForm").addEventListener("submit", loginForm);
+const logoutButton = async (event) => {
+  event.preventDefault();
+
+  document.querySelector(".loginForm").addEventListener("submit", loginForm);
+
+  const response = await fetch("/user/logout", {
+    method: "POST",
+  });
+};
+
+document.querySelector("#logoutButton").addEventListener("click", logoutButton);

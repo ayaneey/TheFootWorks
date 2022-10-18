@@ -24,8 +24,10 @@ img {
 .wrapper {
   padding: 30px;
   max-width: 1200px;
-  margin: auto;
-}
+  margin-left: 10%;
+  display: block;
+ 
+  
 .h3 {
   font-weight: 900;
 }
@@ -257,10 +259,10 @@ img {
   }
   .filter,
   #mobile-filter {
-    display: none;
+    display: block;
   }
 }
-@media (min-width: 576px) and (max-width: 767px) {
+@media (min-width: 576px) and (max-width: 991px) {
   #sidebar {
     width: 35%;
   }

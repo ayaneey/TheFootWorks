@@ -1,4 +1,4 @@
-const loginForm = async (event) => {
+const signupForm = async (event) => {
   // Stop the browser from submitting the form so we can do so with JavaScript
   event.preventDefault();
 
@@ -9,7 +9,7 @@ const loginForm = async (event) => {
   if (email && password) {
     console.log(email, password);
     // Send the e-mail and password to the server
-    const response = await fetch("/user/login", {
+    const response = await fetch("/user/signup", {
       method: "POST",
       body: JSON.stringify({ email: email, password: password }),
       headers: { "Content-Type": "application/json" },
@@ -17,21 +17,11 @@ const loginForm = async (event) => {
 
     if (response.ok) {
       document.location.replace("/");
-      alert("Logged in!");
+      alert("Signed up!");
     } else {
-      alert("Failed to log in");
+      alert("Failed to sign up");
     }
   }
 };
 
-const logoutButton = async (event) => {
-  event.preventDefault();
-
-  document.querySelector(".loginForm").addEventListener("submit", loginForm);
-
-  const response = await fetch("/user/logout", {
-    method: "POST",
-  });
-};
-
-document.querySelector("#logoutButton").addEventListener("click", logoutButton);
+document.querySelector(".signUpForm").addEventListener("submit", signupForm);

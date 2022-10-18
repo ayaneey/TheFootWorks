@@ -19,6 +19,7 @@ The Footworks is an e-commerce site dedicated to providing the latest, up-to-dat
 
 ## Deployed Application
 <img width="1440" alt="Working App" src="https://user-images.githubusercontent.com/108099259/196418882-263806f7-31f5-4b7d-bd80-f3697a1f6d3a.png">
+[CLICK HERE FOR APP](https://stark-beach-48560.herokuapp.com/)
 
 ## Contributors
 [Ayan](https://github.com/ayaneey)

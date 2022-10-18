@@ -19,7 +19,7 @@ router.get("/signup", async (req, res) => {
 });
 
 // // CREATE new user
-router.post("/", async (req, res) => {
+router.post("/signup", async (req, res) => {
   try {
     const dbUserData = await User.create({
       email: req.body.email,
@@ -37,7 +37,7 @@ router.post("/", async (req, res) => {
   }
 });
 
-// // Login
+// Login
 router.post("/login", async (req, res) => {
   try {
     const dbUserData = await User.findOne({
@@ -53,12 +53,13 @@ router.post("/login", async (req, res) => {
       return;
     }
 
-    const validPassword = await dbUserData.checkPassword(req.body.password, 10);
+    const validPassword = await dbUserData.checkPassword(req.body.password);
 
     if (!validPassword) {
-      res
-        .status(400)
-        .json({ message: "Incorrect email or password. Please try again!" });
+      console.log(req.body.password);
+      res.status(400).json({
+        message: "Incorrect email or password. Please try again!!!!!",
+      });
       return;
     }
 

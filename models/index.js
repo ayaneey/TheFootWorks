@@ -1,5 +1,5 @@
 // import models
-const Product = require("./product");
+const Product = require("./Product");
 const User = require("./user");
 const WishList = require("./wishlist");
 
